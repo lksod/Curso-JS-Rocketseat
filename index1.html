@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso JS again</title>
+</head>
+<body>
+
+    <div>
+        <input type="text" name="nome" id="nome">
+        <button onclick="adicionar()">Adicionar</button>
+        <button id="btn">Clique</button>
+    </div> 
+
+    <div id="new"></div>
+
+    <ul></ul>
+
+    <script> 
+        /*var inputElement = document.querySelector('div#app input');
+        var btnElement = document.querySelector('button.botao');
+        
+        btnElement.onclick = function() {
+            var text = inputElement.value;
+            alert(text);
+        }
+
+        var linkElement = document.createElement('a');
+
+        linkElement.setAttribute('href', 'http://youtube.com');
+
+        var textElement = document.createTextNode('Acessar link')
+        linkElement.appendChild(textElement)
+
+        var containerElement = document.querySelector('#link')
+        containerElement.appendChild(linkElement)
+
+        var enputElement = document.querySelector('#nome') 
+        containerElement.removeChild(enputElement) */
+
+            var btn = document.getElementById('btn');
+            var novo = document.getElementById('new');
+            btn.onclick = function() {
+                var boxElement = document.createElement('div');
+                boxElement.style.height = "100px";
+                boxElement.style.width = "100px";
+                boxElement.style.backgroundColor = '#f00';
+                novo.appendChild(boxElement);
+
+                boxElement.onmouseover = function() {
+                    boxElement.style.backgroundColor = getRandomColor();
+                }
+                novo.appendChild(boxElement);
+            };
+            
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        var newColor = getRandomColor(); // #E943F0
+
+        var names = [
+            "Diego", 
+            "Gabriel",
+            "Lucas"
+        ];
+
+      //pegando elemento UL
+      var elementList = document.querySelector("ul");
+
+      //pegando o input text element
+      var NewName = document.getElementById("nome");
+
+      //percorrendo nome da lista de nomes
+      for (name of names) {
+        //chamando função que insere o nome
+        adicionaItem(name);
+      }
+
+      //Adicionando item ao elemento li filho do elemento ul
+      function adicionaItem(name) {
+        console.log("TCL: adicionaItem -> name", name);
+        //pegando elemento li filho de ul
+        var elementChild = document.createElement("li");
+
+        //criando o texto para inserir no li
+        var textoDoFilho = document.createTextNode(name);
+
+        //inserindo texto ao elemento li
+        elementChild.appendChild(textoDoFilho);
+
+        //inserindo o li ao elemento ul
+        elementList.appendChild(elementChild);
+      }
+      function adicionar() {
+        adicionaItem(NewName.value);
+
+        NewName.value = "";
+      } 
+
+
+   </script>
+
+</body>
+</html>  

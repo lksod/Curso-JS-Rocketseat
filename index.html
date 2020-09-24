@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso JS again</title>
+</head>
+<body>
+
+    <script> 
+    console.log('hello world again')
+    
+    var endereco = {
+        rua: "Rua dos pinheiros",
+        numero: 1293,
+        bairro: "Centro",
+        cidade: "São Paulo",
+        uf: "SP"
+    };
+    console.log('O usuário mora em ' + endereco.cidade + ' / ' + endereco.uf + ', no Bairro ' + endereco.bairro + ' na ' + '"' + endereco.rua + '"' + ' com n° ' + endereco.numero + '.');
+    
+    function pares(x,y) {
+        for(var i = x; i<y; i++){
+            if(i%2==0){
+                console.log(i)
+            }
+        }
+    }
+    pares(32,321);
+
+    function temHabilidade(skills) {
+        for(var i = 0; i < 3; i++){
+            if(skills[i] === "Javascript"){
+                console.log('true');
+            }else{
+                console.log('false');
+            }
+        }
+    }
+
+    var skills = ["Javascript", "ReactJS", "React Native"];
+    temHabilidade(skills);
+
+    function experiencia(anos) {
+
+        if(anos >= 0 && anos <= 1){
+            console.log('Iniciante')
+        }
+        if(anos > 1 && anos <= 3){
+            console.log('intermediário')
+        }
+        if(anos > 3 && anos <= 6){
+            console.log('Avançado')
+        }
+        if(anos >= 7) {
+            console.log('Jedi Master')
+        }
+    }
+
+    var anosEstudo = 7;
+    experiencia(anosEstudo);
+
+    
+    function pessoas(usuarios){
+        for (let value of usuarios) {
+            console.log('O ' + value.nome + ' possui as habilidades: ' + value.habilidades.join(", "));
+        }
+    }
+    
+    var usuarios = [
+        {
+            nome: "Diego",
+            habilidades: ["javascript", "ReactJS", "Redux"]
+        },
+        {
+        nome: "Gabriel",
+        habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+        }
+    ];
+   
+    pessoas(usuarios);
+
+   </script>
+    <window>
+</body>
+</html>  
